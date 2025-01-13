@@ -1,0 +1,4 @@
+aiohttp==3.8.5
+aiogram==2.25.1
+certifi==2023.7.22
+yarl==1.9.2

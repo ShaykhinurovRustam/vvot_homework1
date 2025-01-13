@@ -1,0 +1,8 @@
+import os
+
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+WEBHOOK_URL = os.getenv('WEBHOOK_URL')
+WEBHOOK_PATH = '/webhook'
+YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
+CATALOG_ID = os.getenv('CATALOG_ID')
+INSTRUCTION_URL = os.getenv('INSTRUCTION_URL')
