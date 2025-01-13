@@ -33,8 +33,6 @@ async def handle_photo(message: types.Message):
 
         text = await extract_text_from_photo(b64_photo)
         
-        await message.answer(text)
-
         if text:
             response = await get_gpt_response(text)
             await message.answer(response)
