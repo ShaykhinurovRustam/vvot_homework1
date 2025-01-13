@@ -84,12 +84,6 @@ resource "yandex_function" "func" {
   execution_timeout = 10
   service_account_id = yandex_iam_service_account.tg-bot.id
 
-  storage_mounts {
-    mount_point_name = "images"
-    bucket = yandex_storage_bucket.bucket.bucket
-    prefix = ""
-  }
-
   environment = {
     "TELEGRAM_TOKEN" = var.tg_bot_key
     "IMAGES_BUCKET" = yandex_storage_bucket.bucket.bucket

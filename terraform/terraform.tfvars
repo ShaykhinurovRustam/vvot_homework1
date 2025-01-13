@@ -1,5 +1,5 @@
 cloud_id = "b1g71e95h51okii30p25"
 folder_id = "b1gim3te17uj7ilj858m"
-tg_bot_key = "7378630714:AAE0D1jmLDUsjFYGHaZz0wfT4F6o67wHOe0"
-yandex_api_key = "t1.9euelZqeyY3MzYzIjpWax5fGkM_One3rnpWayJmYzo-XnIqSjJjKzp3Il57l9PdLTWpD-e9GUmqw3fT3C3xnQ_nvRlJqsM3n9euelZqMz5bNm5uRyMfLzZOQksiWlO_8xeuelZqMz5bNm5uRyMfLzZOQksiWlA.vYQ4mVbIVbfVYiKepQc3fA52VeqDMPdT98q5GXPOT1g2U_aLU-jC_8elw5MnuyTFmWt6mMlJKND31WkEKsnYBg"
+tg_bot_key = "******"
+yandex_api_key = "*****"
 instruction_file_path = "instruction.txt"

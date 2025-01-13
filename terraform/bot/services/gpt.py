@@ -3,6 +3,7 @@ import asyncio
 
 from config import YANDEX_API_KEY, INSTRUCTION_URL, CATALOG_ID
 
+
 POLL_URL = 'https://llm.api.cloud.yandex.net/operations/'
 COMPLETION_URL = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completionAsync'
 
