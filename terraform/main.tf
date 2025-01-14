@@ -80,13 +80,12 @@ resource "yandex_function" "func" {
   user_hash = archive_file.zip.output_sha256
   runtime = "python39"
   entrypoint = "main.handler"
-  memory = 128
-  execution_timeout = 10
+  memory = 512
+  execution_timeout = 120
   service_account_id = yandex_iam_service_account.tg-bot.id
 
   environment = {
     "TELEGRAM_TOKEN" = var.tg_bot_key
-    "IMAGES_BUCKET" = yandex_storage_bucket.bucket.bucket
     "YANDEX_API_KEY" = var.yandex_api_key
     "CATALOG_ID" = var.folder_id
     "INSTRUCTION_URL" = "https://${yandex_storage_bucket.bucket.bucket}.storage.yandexcloud.net/${yandex_storage_object.instruction.key}"
@@ -112,15 +111,11 @@ resource "null_resource" "curl" {
   }
 
   triggers = {
-    on_version_change = var.tg_bot_key
+    destroy_var = var.tg_bot_key
   }
 
   provisioner "local-exec" {
     when = destroy
-    command = "curl --insecure -X POST https://api.telegram.org/bot${self.triggers.on_version_change}/deleteWebhook"
+    command = "curl --insecure -X POST https://api.telegram.org/bot${self.triggers.destroy_var}/deleteWebhook"
   }
-}
-
-output "func_url" {
-  value = "https://functions.yandexcloud.net/${yandex_function.func.id}"
 }

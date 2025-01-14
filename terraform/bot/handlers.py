@@ -14,8 +14,8 @@ async def handle_message(message: types.Message):
     try:
         response = await get_gpt_response(message.text)
         await message.answer(response)
-    except Exception as e:
-        await message.answer(f'Я не смог подготовить ответ на экзаменационный вопрос.')
+    except Exception:
+        await message.answer('Я не смог подготовить ответ на экзаменационный вопрос.')
 
 async def handle_photo(message: types.Message):
     if message.media_group_id:
@@ -38,8 +38,8 @@ async def handle_photo(message: types.Message):
             await message.answer(response)
         else:
             await message.answer('Я не могу обработать эту фотографию.')
-    except Exception as ex:
-        await message.answer(f'Произошла ошибка при обработке фотографии.')
+    except Exception:
+        await message.answer('Я не могу обработать эту фотографию.')
 
 async def handle_unsupported(message: types.Message):
     await message.answer('Я могу обработать только текстовое сообщение или фотографию.')
